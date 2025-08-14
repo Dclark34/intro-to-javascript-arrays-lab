@@ -55,7 +55,7 @@ Exercise 4: Access an array element
 Complete Exercise 4 in the space below:
 */
 
-favFood = foods[1];
+const favFood = foods[1];
 
 console.log('Exercise 4 result:', favFood);
 
@@ -130,7 +130,7 @@ Exercise 8: Finding an index
 Complete Exercise 8 in the space below:
 */
 
-soyIdx = foods.indexOf('tofu');
+const soyIdx = foods.indexOf('tofu');
 
 console.log('Exercise 8 result:', soyIdx);
 
@@ -150,7 +150,7 @@ Note: The final result should log as:
 Complete Exercise 9 in the space below:
 */
 
-allFoods = foods.join(' -> ');
+const allFoods = foods.join(' -> ');
 
 
 console.log('Exercise 9 result:', allFoods);
@@ -167,7 +167,7 @@ Exercise 10: Check for an element
 Complete Exercise 10 in the space below:
 */
 
-hasSoup = foods.includes('soup');
+const hasSoup = foods.includes('soup');
 
 console.log('Exercise 10 result:', hasSoup);
 
@@ -286,16 +286,17 @@ Exercise 14: Accessing within nested arrays
 Complete Exercise 14 in the space below:
 */
 
-const num = '';
+let num;
 
 for (let i = 0; i < numArrays.length; i++){
-   for (let j = 0; i<i.length; j++) {
-      if (j[i] === '66') {
-         num = [i];
+   for (let j = 0; j < numArrays[i].length; j++) {
+      if (numArrays[i][j] === 66) {
+         num = numArrays[i][j];
       }
    }
 }
-
+//So question: In order to access a subArray value of an Array its just [i][j]? no dot notation needed?
+//-DC.
 
 console.log('Exercise 14 result:', num);
 // loop through an array of arrays. So one loop for the global array, and one for the nested array.
@@ -312,13 +313,17 @@ Hint: Be sure to declare and initialize the total variable before the iterations
 
 Complete Exercise 15 in the space below:
 */
-const total =0;
+
+let total = 0;
 
 for (let i=0; i< numArrays.length; i++) {
-   for(let j=0; j < numArrays[i]) {
+   for(let j=0; j < numArrays[i].length; j++) {
+      total += numArrays[i][j];
    }
 }
 
 
 console.log('Exercise 15 result:\n', total);
-//no idea. 
+
+// Just need to understant the nested loops accessing nested arrays. Loop understands that
+// [i][j] is the value of index j, of the array at index i? Sort of like dot notation for integers?
